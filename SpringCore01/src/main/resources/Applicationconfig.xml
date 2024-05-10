@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+        
+         <!-- bean definitions here -->
+
+    <bean id="Fdx"  class= "com.telusko.services.Fedex"> </bean>
+    <bean id="dhl"  class= "com.telusko.services.DHL"> </bean>
+    
+    <bean id="amz" class= "com.telusko.main.Amazon">   
+    <property ref="Fdx" name="courier"> </property>  <!-- bean id should be given in property reference and name= reference variable in "target class" -->
+    
+    </bean>  
+     
+ </beans> 
